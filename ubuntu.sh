@@ -40,6 +40,7 @@ echo
 whoami
 echo
 id
+sleep 3
 echo
 echo "###############################################"
 echo
@@ -47,6 +48,7 @@ echo -e "\e[0;33m 3.  Linux Distribution Information///// \e[0m"
 echo
 lsb_release -a
 echo
+sleep 3
 echo "###############################################"
 echo
 echo -e "\e[0;33m 4. List Current Logged In Users///// \e[0m"
@@ -59,6 +61,7 @@ echo -e "\e[0;33m 5. $HOSTNAME Uptime Information///// \e[0m"
 echo
 uptime
 echo
+sleep 3
 echo "###############################################"
 echo
 echo -e "\e[0;33m 6. Running Services///// \e[0m"
@@ -89,6 +92,7 @@ echo -e "\e[0;33m 10. History (Commands)///// \e[0m"
 echo
 history | tail -25 | nl
 echo
+sleep 3
 echo "###############################################"
 echo
 echo -e "\e[0;33m 11. Network Interfaces///// \e[0m"
@@ -135,6 +139,7 @@ echo -e "\e[0;33m 18. Check your Source List File///// \e[0m"
 echo
 cat /etc/apt/sources.list
 echo
+sleep 3
 echo "###############################################"
 echo
 echo -e "\e[0;33m 19. Check for Broken Dependencies///// \e[0m"
@@ -162,6 +167,7 @@ for x in $users
 do
 passwd -S $x |grep "NP"
 done
+sleep 3
 echo
 echo "###############################################"
 echo
