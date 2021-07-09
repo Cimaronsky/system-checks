@@ -255,7 +255,7 @@ echo -e        "Checking For Sh Files and Miners"
 echo -e "##############################################"
 
 
-find / -name "*.sh" -exec ls -ltrh {} \;
+find . -name "*.sh" -exec ls -ltrh {} \;
 
 echo -e "########################################"
 echo -e "Done"
