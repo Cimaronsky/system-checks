@@ -219,11 +219,15 @@ echo Script completed in $DIFF seconds :
 echo
 echo Executed on :
 date
-echo
-lsof -i -P -n | grep LISTEN
+echo -e "#############Check Open Ports#################"
 
-iptables -L -n -v
+lsof -i -P -n | grep LISTEN
+sleep 2
+echo -e "#############Listare Reguli Iptables#################"
+iptables -L -n -v --line-numbers
+sleep 2
 systemctl status sshd --no-pager
+sleep 2
 # Check Load Average
 loadaverage=$(top -n 1 -b | grep "load average:" | awk '{print $10 $11 $12}')
 echo -e "Load Average :" $tecreset $loadaverage
@@ -245,6 +249,7 @@ echo -e "External IP : $tecreset "$externalip
 
 # Check if connected to Internet or not
 ping -c 1 google.com &> /dev/null && echo -e "Internet: $tecreset Connected" || echo -e '\E[32m'"Internet: $tecreset Disconnected"
+sleep 1
 echo -e "##############################################"
 echo -e        "Checking For Sh Files and Miners"
 echo -e "##############################################"
